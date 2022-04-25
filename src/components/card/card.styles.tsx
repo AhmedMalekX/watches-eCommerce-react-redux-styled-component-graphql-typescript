@@ -1,9 +1,13 @@
 import styled from "styled-components";
 
+interface Props {
+  type?: string;
+}
+
 export const CardsWrapper = styled.div`
   margin-bottom: 100px;
 `;
-export const CardWrapper = styled.div`
+export const CardWrapper = styled.div<Props>`
   width: 400px;
   box-shadow: 0px 0px 30px 2px #e9e9e9;
   position: relative;
@@ -45,25 +49,35 @@ export const CardWrapper = styled.div`
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 500;
+    display: ${(props) => props.type === "Product" && "none"};
   }
 
   button {
     box-shadow: 0px 0px 2px 0.5px #333;
-    padding: 30px 40px;
+    padding: ${props => props.type === 'Product' ? '10px 12px' : '30px 40px'};
     transition: transform 0.5s linear;
-    transform: translateY(2rem);
-    visibility: hidden;
-    opacity: 0;
+    transform: ${(props) =>
+      props.type === "Product" ? "" : "translateY(2rem)"};
+    visibility: ${(props) => (props.type === "Product" ? "" : "hidden")};
+    opacity: ${(props) => (props.type === "Product" ? 1 : 0)};
+
+    //  Product button custom style
+	  position: ${props => props.type === 'Product' && 'absolute'};
+	  bottom: ${props => props.type === 'Product' && 0};
+	  right: ${props => props.type === 'Product' && 0};
+	  
   }
 
   &:hover {
     box-shadow: 0px 0px 77px 15px #e9e9e9;
-    transform: scale(1.03);
+    transform: ${(props) =>
+      props.type === "Product" ? "scale(1.01)" : "scale(1.03)"};
 
     button {
-      transform: translateY(0);
-      visibility: visible;
-      opacity: 1;
+      transform: ${(props) =>
+        props.type === "Product" ? "" : "translateY(0)"};
+      visibility: ${(props) => (props.type === "Product" ? "" : "visible")};
+      opacity: ${(props) => (props.type === "Product" ? "" : 1)};
     }
   }
 `;
