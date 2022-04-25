@@ -6,9 +6,6 @@ interface ComponentProps {
 	type: string;
 }
 
-
-export const ButtonComponent: React.FC<ComponentProps> = ({title, type}) => {
-	return (
-		<ButtonWrapper type={type}>{title}</ButtonWrapper>
-	)
+export const ButtonComponent: React.FC<ComponentProps> = ({title, type, }) => {
+	return <ButtonWrapper type={type}>{title}</ButtonWrapper>;
 };
