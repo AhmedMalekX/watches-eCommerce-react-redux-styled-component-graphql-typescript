@@ -49,7 +49,7 @@ export const CardWrapper = styled.div`
 
   button {
     box-shadow: 0px 0px 2px 0.5px #333;
-    padding: 0;
+    padding: 30px 40px;
     transition: transform 0.5s linear;
     transform: translateY(2rem);
     visibility: hidden;
@@ -62,7 +62,6 @@ export const CardWrapper = styled.div`
 
     button {
       transform: translateY(0);
-      padding: 30px 40px;
       visibility: visible;
       opacity: 1;
     }

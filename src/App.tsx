@@ -3,6 +3,7 @@ import "./App.css";
 import { Navbar } from "./components/navbar/Navbar.component";
 import { Hero } from "./components/hero/Hero.component";
 import Featured from "./components/featured/Featured.component";
+import Story from "./components/story/Story.component";
 
 const App: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const App: React.FC = () => {
         <Navbar />
         <Hero />
         <Featured />
+        <Story />
       </div>
     </div>
   );

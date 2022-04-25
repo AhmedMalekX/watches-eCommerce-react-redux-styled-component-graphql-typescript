@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import HeaderSection from "../header-section/HeaderSection.component";
-import { CardsWrapper, HeaderWrapper } from "./Featured.styles";
+import { CardsWrapper, HeaderWrapper, FeaturedWrapper } from "./Featured.styles";
 import Card from "../card/card.component";
 import watch1 from "../../assets/img/featured1.png";
 import watch2 from "../../assets/img/featured2.png";
@@ -12,7 +12,7 @@ type Props = OwnProps;
 
 const Featured: FunctionComponent<Props> = (props) => {
   return (
-    <>
+    <FeaturedWrapper>
       <HeaderWrapper>
         <HeaderSection title="Featured" />
       </HeaderWrapper>
@@ -22,7 +22,7 @@ const Featured: FunctionComponent<Props> = (props) => {
         <Card type="featured" img={watch2} name="ingersoll" price={250} />
         <Card type="featured" img={watch3} name="rosegold" price={890} />
       </CardsWrapper>
-    </>
+    </FeaturedWrapper>
   );
 };
 
