@@ -35,7 +35,7 @@ const Products: FunctionComponent<Props> = (props) => {
 				      btnText={<i className='bx bxs-shopping-bag'></i>}/>
 				<Card img={watch4} name="fosil me3" price={650} type="Product"
 				      btnText={<i className='bx bxs-shopping-bag'></i>}/>
-				<Card img={watch4} name="duchen" price={950} type="Product" btnText={<i className='bx bxs-shopping-bag'></i>}/>
+				<Card img={watch5} name="duchen" price={950} type="Product" btnText={<i className='bx bxs-shopping-bag'></i>}/>
 			</ProductsWrapper>
 		</ProductsSection>
 	);

@@ -2,19 +2,17 @@ import React, {FunctionComponent} from "react";
 import {
 	HeaderWrapper,
 	StoryContentWrapper,
-	StoryImageWrapper,
 	StoryWrapper,
 } from "./Story.styles";
 import watch from "../../assets/img/story.png";
 import HeaderSection from "../header-section/HeaderSection.component";
 import {ButtonComponent} from "../Button/Button.component";
+import ImageHeadSection from "../ImageHeadSection/ImageHeadSection.component";
 
 const Story: FunctionComponent = () => {
 	return (
 		<StoryWrapper>
-			<StoryImageWrapper>
-				<img src={watch} alt="Watch"/>
-			</StoryImageWrapper>
+			<ImageHeadSection imgUrl={watch} imgAlt='Watch' />
 			<StoryContentWrapper>
 				<HeaderWrapper>
 					<HeaderSection title="Our Story"/>
