@@ -19,7 +19,7 @@ const Card: FunctionComponent<Props> = ({type, img, name, price, btnText='Add to
 				<img src={img} alt={name}/>
 				<h2>{name}</h2>
 				<span>${price}</span>
-				<span>Sale</span>
+				<span>{type === 'new' ? 'New' : 'Sale'}</span>
 				<ButtonComponent title={btnText} type="primary"/>
 			</CardWrapper>
 		</CardsWrapper>

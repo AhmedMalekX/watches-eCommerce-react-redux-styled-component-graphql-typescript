@@ -6,6 +6,7 @@ import Featured from "./components/featured/Featured.component";
 import Story from "./components/story/Story.component";
 import Products from "./components/Products/Products.component";
 import Testimonial from "./components/testimonial/testimonial.component";
+import NewArrivals from "./components/NewArrivals/NewArrivals.component";
 
 const App: React.FC = () => {
 	return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
 				<Story/>
 				<Products/>
 				<Testimonial/>
+				<NewArrivals/>
 			</div>
 		</div>
 	);

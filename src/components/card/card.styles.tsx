@@ -17,7 +17,7 @@ export const CardWrapper = styled.div<Props>`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  transition: transform 0.5s linear;
+  transition: all 0.5s linear;
 
   img {
     width: 100%;
@@ -40,9 +40,10 @@ export const CardWrapper = styled.div<Props>`
 
   span:last-of-type {
     position: absolute;
-    top: 54px;
-    left: -17px;
-    transform: rotate(-90deg);
+    top: ${props => props.type === 'new' ? '30px' : '54px'};
+    left: ${props => props.type === 'featured' ? '-17px' : ''};
+    right: ${props => props.type === 'new' ? '17px' : ''};
+    transform: ${props => props.type === 'featured' ? 'rotate(-90deg)' : ''};
     background-color: #ffb568;
     color: #ffffff;
     padding: 8px 12px;
@@ -70,8 +71,18 @@ export const CardWrapper = styled.div<Props>`
 
   &:hover {
     box-shadow: 0px 0px 77px 15px #e9e9e9;
+    background-color: ${props => props.type === 'new' && '#FFB568'};
     transform: ${(props) =>
       props.type === "Product" ? "scale(1.01)" : "scale(1.03)"};
+    
+    span:not(:last-of-type) {
+      color: ${props => props.type === 'new' && '#2B2B2B'};
+      padding-bottom: 15px;
+    }
+    
+    span:last-of-type {
+      background-color: ${props => props.type === 'new' && '#2B2B2B'};
+    }
 
     button {
       transform: ${(props) =>
