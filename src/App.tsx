@@ -8,6 +8,7 @@ import Products from "./components/Products/Products.component";
 import Testimonial from "./components/testimonial/testimonial.component";
 import NewArrivals from "./components/NewArrivals/NewArrivals.component";
 import NewsLetter from "./components/NewsLetter/NewsLetter.component";
+import Footer from "./components/footer/Footer.component";
 
 const App: React.FC = () => {
 	return (
@@ -21,6 +22,7 @@ const App: React.FC = () => {
 				<Testimonial/>
 				<NewArrivals/>
 				<NewsLetter/>
+				<Footer/>
 			</div>
 		</div>
 	);

@@ -34,4 +34,5 @@ export const NewsLetterInputWrapper = styled.div`
 export const NewsLetterInput = styled.input`
   padding: 27px;
   font-size: 20px;
+	outline: none;
 `;
