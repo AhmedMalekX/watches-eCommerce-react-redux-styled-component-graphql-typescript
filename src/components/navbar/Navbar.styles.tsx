@@ -1,20 +1,22 @@
 import styled from "styled-components";
 
 interface Props {
-	active: boolean;
+	active?: boolean;
 }
 
-export const NavbarWrapper = styled.nav`
+export const NavbarWrapper = styled.nav<Props>`
   display: flex;
   align-items: center;
   justify-content: flex-start;
   overflow: hidden;
   font-size: 20px;
-  padding: 25px;
+  padding: 25px 70px;
   z-index: 100;
   position: fixed;
-  width: 93%;
-  margin: 0 10px;
+  width: 100%;
+
+  background: ${props => props.active && '#ffffff'};
+  box-shadow: ${props => props.active && '1px 0px 4px 1px #c8c8c8'};
 `;
 
 export const LogoWrapper = styled.div`
@@ -48,4 +50,7 @@ export const NavLeftItems = styled.div`
   }
 `;
 
-export const IconWrapper = styled.div``;
+export const IconWrapper = styled.div`
+  display: flex;
+  cursor: pointer;
+`;

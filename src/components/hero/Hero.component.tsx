@@ -7,11 +7,12 @@ import {
 import {ButtonComponent} from "../Button/Button.component";
 import HomeImage from '../../assets/img/home.png'
 
-export const Hero = () => {
+
+export const Hero: React.FC = () => {
 	return (
 		<HeroWrapper>
 			<HeroTextContainer>
-				<h1>New watch <br />collections b720</h1>
+				<h1>New watch <br/>collections b720</h1>
 				<p>
 					Latest arrival of the new important watches of B720 with modern and
 					resistant design.

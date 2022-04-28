@@ -27,8 +27,6 @@ const NewArrivals: FunctionComponent<Props> = (props) => {
 			<Swiper
 				spaceBetween={270}
 				slidesPerView={3}
-				onSlideChange={() => console.log("slide change")}
-				onSwiper={(swiper) => console.log(swiper)}
 				style={{padding: "90px 30px 30px"}}
 			>
 				<SwiperSlide>

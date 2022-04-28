@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
 	NavbarWrapper,
 	LogoWrapper,
@@ -6,13 +6,31 @@ import {
 	LinkWrapper,
 	NavLeftItems,
 	NavRightItems,
-	IconWrapper
+	IconWrapper,
 } from "./Navbar.styles";
 
+
 export const Navbar: React.FC = () => {
- 
+	// set navbar bg when scroll
+	const [bgNav, setBgNav] = useState(false);
+	
+	const changeNavbarBg = () => {
+		if (window.pageYOffset >= 74) {
+			setBgNav(true);
+		} else {
+			setBgNav(false);
+		}
+	};
+	
+	window.addEventListener("scroll", changeNavbarBg);
+	
+	// // toggle theme
+	// const toggleTheme = () => {
+	// 	theme === "light" ? setTheme("dark") : setTheme("light");
+	// };
+	
 	return (
-		<NavbarWrapper>
+		<NavbarWrapper active={bgNav}>
 			<NavRightItems>
 				<LogoWrapper>
 					<i className="bx bxs-watch"></i>
@@ -29,8 +47,17 @@ export const Navbar: React.FC = () => {
 				</LinksWrapper>
 				
 				<IconWrapper>
+					{/*<div onClick={toggleTheme}>*/}
+					{/*	{theme === "light" ? (*/}
+					{/*		<i className="bx bx-moon"></i>*/}
+					{/*	) : (*/}
+					{/*		<i className="bx bx-sun"></i>*/}
+					{/*	)}*/}
+					{/*</div>*/}
 					<i className="bx bx-moon"></i>
-					<i className="bx bx-shopping-bag"></i>
+					<div>
+						<i className="bx bx-shopping-bag"></i>
+					</div>
 				</IconWrapper>
 			</NavLeftItems>
 		</NavbarWrapper>
