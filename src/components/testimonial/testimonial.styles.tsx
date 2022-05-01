@@ -42,17 +42,20 @@ export const QuoteWrapper = styled.span`
   margin-top: 5px;
   margin-left: 5px;
   color: #ffb568;
-  box-shadow: 1px 1px 11px -3px #bfbfbe;
+  box-shadow: ${props => props.theme.quoteBoxShadow};
 `;
 
 export const TestimonialAuthorWrapper = styled.div`
   display: flex;
   margin-top: 45px;
+  color: ${props => props.theme.primaryTxtColor}
+
 `;
 
 export const TestimonialDateWrapper = styled.span`
   margin-top: 30px;
   font-weight: 500;
+  color: ${props => props.theme.primaryTxtColor}
 `;
 export const TestimonialTextWrapper = styled.p`
   margin-top: 40px;
@@ -60,7 +63,7 @@ export const TestimonialTextWrapper = styled.p`
   font-weight: 400;
   padding: 0 55px 0 0;
   line-height: 1.4;
-  color: #3a3a3a;
+  color: ${props => props.theme.secondaryTxtColor};
 	text-align: left;
 
   span {
@@ -86,9 +89,16 @@ export const TestimonialAuthorInfoWrapper = styled.div`
   margin-left: 20px;
   margin-top: 10px;
   text-transform: capitalize;
+	
 
   span:not(:last-of-type) {
     padding-bottom: 10px;
     font-weight: bold;
+    color: ${props => props.theme.primaryTxtColor}
   }
+	
+	span:last-of-type {
+		
+    color: ${props => props.theme.secondaryTxtColor}
+	}
 `

@@ -10,6 +10,7 @@ export const HeroWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 `;
+
 export const HeroTextContainer = styled.div<Props>`
   padding: 200px;
 
@@ -18,7 +19,6 @@ export const HeroTextContainer = styled.div<Props>`
     text-transform: uppercase;
     line-height: 1.3;
     color: ${props => props.theme.primaryTxtColor};
-	  background-color: ${props => props.theme.primaryTxtColor};
   }
 
   p {
@@ -45,7 +45,6 @@ export const HeroImgContainer = styled.div`
     position: absolute;
 	  height: 100%;
     background-color: #ffb568;
-	  z-index: -1;
 	  right: 0;
   }
 `;

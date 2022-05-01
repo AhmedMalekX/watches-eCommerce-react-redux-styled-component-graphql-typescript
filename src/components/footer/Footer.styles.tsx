@@ -15,7 +15,7 @@ export const InfoWrapper = styled.div`
     h3 {
       font-size: 25px;
       margin-bottom: 15px;
-      color: #2b2b2b;
+      color: ${props => props.theme.primaryTxtColor};
     }
 
     ul {
@@ -26,7 +26,7 @@ export const InfoWrapper = styled.div`
         color: #5c5c5c;
 
         &:hover {
-          color: #222222;
+          color: ${props => props.theme.secondaryTxtColor};
         }
 
         a {
@@ -34,7 +34,7 @@ export const InfoWrapper = styled.div`
           color: #5c5c5c;
 
           &:hover {
-            color: #222222;
+            color: ${props => props.theme.secondaryTxtColor};
           }
         }
       }
@@ -44,14 +44,14 @@ export const InfoWrapper = styled.div`
   div:last-of-type {
     ul {
       display: flex;
-	    
-	    li {
-		    font-size: 20px;
-		    cursor: pointer;
-	    }
+
+      li {
+        font-size: 20px;
+        cursor: pointer;
+      }
 
       li:not(:last-of-type) {
-				margin-right: 20px;
+        margin-right: 20px;
       }
     }
   }

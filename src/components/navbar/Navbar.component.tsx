@@ -1,4 +1,8 @@
 import React, {useState} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {toggle} from "../../rtk/darkmode";
+
+// Styles
 import {
 	NavbarWrapper,
 	LogoWrapper,
@@ -11,6 +15,13 @@ import {
 
 
 export const Navbar: React.FC = () => {
+	// RTX
+	const dispatch = useDispatch();
+	const darkmodeStatus = useSelector((state: {darkmode: boolean}) => state.darkmode)
+	
+	
+	console.log('darkmodeStatus 1', darkmodeStatus)
+	
 	// set navbar bg when scroll
 	const [bgNav, setBgNav] = useState(false);
 	
@@ -23,11 +34,6 @@ export const Navbar: React.FC = () => {
 	};
 	
 	window.addEventListener("scroll", changeNavbarBg);
-	
-	// // toggle theme
-	// const toggleTheme = () => {
-	// 	theme === "light" ? setTheme("dark") : setTheme("light");
-	// };
 	
 	return (
 		<NavbarWrapper active={bgNav}>
@@ -46,15 +52,10 @@ export const Navbar: React.FC = () => {
 					<LinkWrapper active={false}>new</LinkWrapper>
 				</LinksWrapper>
 				
-				<IconWrapper>
-					{/*<div onClick={toggleTheme}>*/}
-					{/*	{theme === "light" ? (*/}
-					{/*		<i className="bx bx-moon"></i>*/}
-					{/*	) : (*/}
-					{/*		<i className="bx bx-sun"></i>*/}
-					{/*	)}*/}
-					{/*</div>*/}
-					<i className="bx bx-moon"></i>
+				<IconWrapper active={bgNav}>
+					<div onClick={() => dispatch(toggle({status: !darkmodeStatus}))}>
+						{darkmodeStatus ? <i className="bx bx-sun"></i> : <i className="bx bx-moon"></i>}
+					</div>
 					<div>
 						<i className="bx bx-shopping-bag"></i>
 					</div>

@@ -9,7 +9,7 @@ export const CardsWrapper = styled.div`
 `;
 export const CardWrapper = styled.div<Props>`
   width: 400px;
-  box-shadow: 0px 0px 30px 2px #e9e9e9;
+  box-shadow: 0px 0px 30px 2px ${props => props.theme.boxShadowColor};
   position: relative;
   padding: 25px;
   display: flex;
@@ -27,7 +27,7 @@ export const CardWrapper = styled.div<Props>`
     text-transform: uppercase;
     margin: 20px;
     letter-spacing: 1.5px;
-    color: #2b2b2b;
+    color: ${props => props.theme.primaryTxtColor};
     font-weight: 500;
     font-size: 25px;
   }
@@ -37,7 +37,11 @@ export const CardWrapper = styled.div<Props>`
     color: #ffb568;
     letter-spacing: 1.1px;
   }
-
+  
+  span:first-of-type {
+    padding: 12px;
+  }
+  
   span:last-of-type {
     position: absolute;
     top: ${props => props.type === 'new' ? '30px' : '54px'};
@@ -68,16 +72,15 @@ export const CardWrapper = styled.div<Props>`
 	  right: ${props => props.type === 'Product' && 0};
 	  
   }
-
+  //
   &:hover {
-    box-shadow: 0px 0px 77px 15px #e9e9e9;
+    box-shadow: ${props => props.theme.cardShadow};
     background-color: ${props => props.type === 'new' && '#FFB568'};
     transform: ${(props) =>
       props.type === "Product" ? "scale(1.01)" : "scale(1.03)"};
     
     span:not(:last-of-type) {
       color: ${props => props.type === 'new' && '#2B2B2B'};
-      padding-bottom: 15px;
     }
     
     span:last-of-type {

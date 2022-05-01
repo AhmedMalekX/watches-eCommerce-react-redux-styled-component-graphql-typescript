@@ -24,6 +24,7 @@ export const StoryContentWrapper = styled.div`
     font-size: 56px;
     font-weight: 600;
     margin: 25px 0 35px;
+	  color: ${props => props.theme.primaryTxtColor}
   }
 
   p {
