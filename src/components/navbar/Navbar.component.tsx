@@ -14,7 +14,12 @@ import {
 } from "./Navbar.styles";
 
 
-export const Navbar: React.FC = () => {
+interface Props {
+	showSidebar: boolean;
+	setShowSidebar: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const Navbar: React.FC<Props> = ({showSidebar,setShowSidebar}) => {
 	// RTX
 	const dispatch = useDispatch();
 	const darkmodeStatus = useSelector((state: {darkmode: boolean}) => state.darkmode)
@@ -56,7 +61,7 @@ export const Navbar: React.FC = () => {
 					<div onClick={() => dispatch(toggle({status: !darkmodeStatus}))}>
 						{darkmodeStatus ? <i className="bx bx-sun"></i> : <i className="bx bx-moon"></i>}
 					</div>
-					<div>
+					<div onClick={() => setShowSidebar(!showSidebar)}>
 						<i className="bx bx-shopping-bag"></i>
 					</div>
 				</IconWrapper>

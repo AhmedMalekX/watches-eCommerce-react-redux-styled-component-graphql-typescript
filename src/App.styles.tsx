@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const AppWrapper = styled.section`
   background-color: ${props => props.theme.bgColor};
   position: relative;
+	overflow: hidden;
 `
 
 export const ContainerWrapper = styled.div`
