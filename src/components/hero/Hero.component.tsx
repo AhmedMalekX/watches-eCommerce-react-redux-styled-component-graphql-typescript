@@ -11,6 +11,9 @@ import HomeImage from '../../assets/img/home.png'
 export const Hero: React.FC = () => {
 	return (
 		<HeroWrapper>
+			<HeroImgContainer>
+				<img src={HomeImage} alt="Hero"/>
+			</HeroImgContainer>
 			<HeroTextContainer>
 				<h1>New watch <br/>collections b720</h1>
 				<p>
@@ -23,9 +26,7 @@ export const Hero: React.FC = () => {
 					<ButtonComponent title="Add to cart" type="primary"/>
 				</ButtonsContainer>
 			</HeroTextContainer>
-			<HeroImgContainer>
-				<img src={HomeImage} alt="Hero"/>
-			</HeroImgContainer>
+
 		</HeroWrapper>
 	);
 };
