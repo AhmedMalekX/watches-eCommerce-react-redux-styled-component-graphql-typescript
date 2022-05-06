@@ -10,7 +10,7 @@ export const CardsWrapper = styled.div`
 export const CardWrapper = styled.div<Props>`
   box-shadow: 0px 0px 30px 2px ${props => props.theme.boxShadowColor};
   position: relative;
-  padding: 25px;
+  padding: ${props => props.type === 'new' ? '6rem 0.5rem' : '2.5rem'};
   display: flex;
   flex-direction: column;
   justify-content: center;

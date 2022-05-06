@@ -9,11 +9,22 @@ export const SidebarWrapper = styled.div<Props>`
   position: fixed;
   z-index: 100;
   height: 100vh;
-  width: 20vw;
   right: 0;
   top: 0;
   animation: all 0.3s ease-in;
   transform: ${props => props.active ? 'translateX(0%)' : 'translateX(100%)'};
+	
+	@media screen and (min-width: 320px) {
+    width: 100%;
+	}
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 25%;
+  }
 `
 
 
@@ -26,7 +37,7 @@ export const ContentWrapper = styled.div`
 
 export const SidebarActionWrapper = styled.div`
   align-self: flex-end;
-  padding: 25px 25px 0px;
+  padding: 1.6rem 2.5rem 0px;
 
   i {
     font-weight: bold;
@@ -60,8 +71,7 @@ export const SummaryWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-	margin-top: 25px;
-  padding: 25px;
+  padding: 2.5rem;
 	color: ${props => props.theme.primaryTxtColor};
   font-size: 18px;
   font-weight: bold;

@@ -9,13 +9,13 @@ export const FooterWrapper = styled.section`
 
 export const InfoWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  //grid-template-columns: repeat(4, 1fr);
 
   div {
     h3 {
       font-size: 25px;
       margin-bottom: 15px;
-      color: ${props => props.theme.primaryTxtColor};
+      color: ${(props) => props.theme.primaryTxtColor};
     }
 
     ul {
@@ -26,7 +26,7 @@ export const InfoWrapper = styled.div`
         color: #5c5c5c;
 
         &:hover {
-          color: ${props => props.theme.secondaryTxtColor};
+          color: ${(props) => props.theme.secondaryTxtColor};
         }
 
         a {
@@ -34,7 +34,7 @@ export const InfoWrapper = styled.div`
           color: #5c5c5c;
 
           &:hover {
-            color: ${props => props.theme.secondaryTxtColor};
+            color: ${(props) => props.theme.secondaryTxtColor};
           }
         }
       }
@@ -54,6 +54,10 @@ export const InfoWrapper = styled.div`
         margin-right: 20px;
       }
     }
+  }
+
+  @media screen and (min-width: 320px) {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 `;
 export const CopyrightWrapper = styled.div`
