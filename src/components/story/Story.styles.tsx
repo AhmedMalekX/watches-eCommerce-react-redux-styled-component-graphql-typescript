@@ -9,8 +9,23 @@ export const StoryWrapper = styled.section`
     ". x x y y";
 
   align-items: start;
-  column-gap: 85px;
-  margin-bottom: 100px;
+  column-gap: 8.5rem;
+
+  @media screen and (min-width: 320px) {
+    grid-template-areas:
+      "x x"
+      "y y";
+    grid-template-columns: auto;
+    padding: 0 1rem 0 1rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+      ". x x y y"
+      ". x x y y";
+    margin-bottom: 10rem;
+  }
 `;
 
 export const StoryContentWrapper = styled.div`
@@ -18,17 +33,13 @@ export const StoryContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0 25px;
 
   h2 {
-    font-size: 56px;
     font-weight: 600;
-    margin: 25px 0 35px;
-	  color: ${props => props.theme.primaryTxtColor}
+    color: ${(props) => props.theme.primaryTxtColor};
   }
 
   p {
-    font-size: 31px;
     color: #bfbfbe;
     line-height: 1.1;
     font-weight: 400;
@@ -38,6 +49,32 @@ export const StoryContentWrapper = styled.div`
   button {
     box-shadow: 0px 0px 5px 0.5px #333;
   }
+
+  @media screen and (min-width: 320px) {
+    padding: 0;
+
+    h2 {
+      font-size: 3.7rem;
+      margin: 0 0 3.5rem;
+    }
+
+    p {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 0 2.5rem;
+
+    h2 {
+      font-size: 5.6rem;
+      margin: 2.5rem 0 3.5rem;
+    }
+
+    p {
+      font-size: 3.1rem;
+    }
+  }
 `;
 
 export const HeaderWrapper = styled.div`
@@ -46,10 +83,18 @@ export const HeaderWrapper = styled.div`
   justify-content: center;
 
   div {
-    margin: 100px 0 35px;
-
     &:before {
       margin: 10px 50px 10px 0;
     }
+  }
+
+  @media screen and (min-width: 768px) {
+    div {
+      margin: 0 0 3.5rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin: 100px 0 35px;
   }
 `;

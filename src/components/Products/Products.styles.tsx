@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const ProductsSection = styled.section`
-  margin-top: 250px;
   display: grid;
+
+
 `;
 export const HeaderWrapper = styled.div`
   display: flex;
@@ -11,6 +12,13 @@ export const HeaderWrapper = styled.div`
 `;
 export const ProductsWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   justify-items: center;
+	
+	@media screen and (min-width: 320px) {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+	}
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  }
 `;

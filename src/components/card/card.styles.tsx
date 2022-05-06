@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
 interface Props {
-  type?: string;
+	type?: string;
 }
 
 export const CardsWrapper = styled.div`
   margin-bottom: 100px;
 `;
 export const CardWrapper = styled.div<Props>`
-  width: 400px;
   box-shadow: 0px 0px 30px 2px ${props => props.theme.boxShadowColor};
   position: relative;
   padding: 25px;
@@ -37,11 +36,11 @@ export const CardWrapper = styled.div<Props>`
     color: #ffb568;
     letter-spacing: 1.1px;
   }
-  
+
   span:first-of-type {
     padding: 12px;
   }
-  
+
   span:last-of-type {
     position: absolute;
     top: ${props => props.type === 'new' ? '30px' : '54px'};
@@ -62,36 +61,50 @@ export const CardWrapper = styled.div<Props>`
     padding: ${props => props.type === 'Product' ? '10px 12px' : '30px 40px'};
     transition: transform 0.5s linear;
     transform: ${(props) =>
-      props.type === "Product" ? "" : "translateY(2rem)"};
+            props.type === "Product" ? "" : "translateY(2rem)"};
     visibility: ${(props) => (props.type === "Product" ? "" : "hidden")};
     opacity: ${(props) => (props.type === "Product" ? 1 : 0)};
 
     //  Product button custom style
-	  position: ${props => props.type === 'Product' && 'absolute'};
-	  bottom: ${props => props.type === 'Product' && 0};
-	  right: ${props => props.type === 'Product' && 0};
-	  
+    position: ${props => props.type === 'Product' && 'absolute'};
+    bottom: ${props => props.type === 'Product' && 0};
+    right: ${props => props.type === 'Product' && 0};
+
   }
+
   //
   &:hover {
     box-shadow: ${props => props.theme.cardShadow};
     background-color: ${props => props.type === 'new' && '#FFB568'};
     transform: ${(props) =>
-      props.type === "Product" ? "scale(1.01)" : "scale(1.03)"};
-    
+            props.type === "Product" ? "scale(1.01)" : "scale(1.03)"};
+
     span:not(:last-of-type) {
       color: ${props => props.type === 'new' && '#2B2B2B'};
     }
-    
+
     span:last-of-type {
       background-color: ${props => props.type === 'new' && '#2B2B2B'};
     }
 
     button {
       transform: ${(props) =>
-        props.type === "Product" ? "" : "translateY(0)"};
+              props.type === "Product" ? "" : "translateY(0)"};
       visibility: ${(props) => (props.type === "Product" ? "" : "visible")};
       opacity: ${(props) => (props.type === "Product" ? "" : 1)};
     }
   }
+
+
+  @media screen and (min-width: 320px) {
+    width: 30rem;
+    height: 62rem;
+  }
+
+
+  @media screen and (min-width: 768px) {
+    width: 35rem;
+    height: 70rem;
+  }
+
 `;

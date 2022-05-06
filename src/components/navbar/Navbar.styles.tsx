@@ -19,6 +19,7 @@ export const NavbarWrapper = styled.nav<Props>`
   background: ${(props) => props.active && props.theme.bgColor};
   box-shadow: ${(props) =>
           props.active && `0px 0px 0.1rem 0.1rem ${props.theme.boxShadowColor}`};
+	
 
   @media screen and (min-width: 320px) {
     padding: 1.5rem 1rem;
