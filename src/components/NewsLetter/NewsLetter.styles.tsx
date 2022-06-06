@@ -84,6 +84,7 @@ export const NewsLetterInputWrapper = styled.div`
       padding: 3.1rem;
       font-size: 1.5rem;
       margin-bottom: 0;
+      width: auto;
     }
   }
 `;
@@ -101,5 +102,6 @@ export const NewsLetterInput = styled.input`
     padding: 2.7rem;
     font-size: 1.5rem;
     margin: 0;
+    width: 50%;
   }
 `;
